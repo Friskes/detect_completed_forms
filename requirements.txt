@@ -1,0 +1,9 @@
+fastapi
+python-multipart
+envparse
+motor
+uvicorn
+pytest
+httpx
+pytest-asyncio
+trio
