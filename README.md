@@ -1,5 +1,8 @@
 # Web-приложение для определения заполненных форм.
 
+## Задание
+#### https://docs.google.com/document/d/1fMFwPBs53xzcrltEFOpEG4GWTaQ-5jvVLrNT6_hmC7I
+
 ## 1. Зависимости
 Для запуска этого проекта потребуется:
 - Python 3.11
