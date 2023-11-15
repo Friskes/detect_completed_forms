@@ -6,7 +6,7 @@
 ## 1. Зависимости
 Для запуска этого проекта потребуется:
 - Python 3.11
-- Docker
+- Docker Desktop
 - Git
 
 ## 2. Установка
@@ -38,7 +38,7 @@ python script_for_app_testing.py
 http://127.0.0.1:8000/get_form
 ```
 
-Сделайте первый `POST` запрос с `form-data`:
+Сделайте первый `POST` запрос с `x-www-form-urlencoded`:
 ```
 user_email:        sharpchristopher@example.net
 user_phone:        +7 775 063 46 04
@@ -50,7 +50,7 @@ user_age:          19
 ```
 Приложение должно вернуть: `"UserForm"`
 <br/>
-Сделайте второй `POST` запрос с `form-data`:
+Сделайте второй `POST` запрос с `x-www-form-urlencoded`:
 ```
 user_email:        sharpchristopher@example.net
 user_phone:        +7 775 063 46 04
@@ -59,7 +59,7 @@ user_description:  Care deep gas trouble doctor give institution. Attorney low a
 ```
 Приложение должно вернуть: `"UserForm"`
 <br/>
-Сделайте третий `POST` запрос с `form-data`:
+Сделайте третий `POST` запрос с `x-www-form-urlencoded`:
 ```
 user_email:  sharpchristopher@example.net
 user_phone:  +7 775 063 46 04
@@ -78,11 +78,21 @@ http://127.0.0.1:8000/get_records
 ```
 
 ## 4. Запуск тестов
-- Для запуска встроенных тестов необходим установленный MongoDB сервер на ПК.
+### Вариант - 1
+- Выполните тесты внутри контейнера:
+```
+docker exec -it app pytest ./test_endpoint.py ./test_validation.py
+```
+### Вариант - 2
+- Для запуска тестов без контейнера необходим установленный MongoDB сервер на ПК и прочие зависимости для запуска без контейнера.
 
 Создайте виртуальное окружение:
 ```
 py -3.11 -m venv venv
+```
+Активируйте виртуальное окружение:
+```
+venv\Scripts\activate.bat
 ```
 Установите зависимости:
 ```
